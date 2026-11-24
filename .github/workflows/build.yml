@@ -24,7 +24,14 @@ jobs:
           gradle-version: '8.9'
 
       - name: Create project files
-        run: bash setup.sh
+        env:
+          D: app/src/main/java/com/drago/offlinememory
+        run: |
+          bash setup.sh
+          bash setup2.sh
+          bash setup3.sh
+          bash setup4.sh
+          bash setup5.sh
 
       - name: Build APK
         run: gradle assembleDebug --no-daemon
